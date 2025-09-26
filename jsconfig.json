@@ -1,7 +1,20 @@
+// {
+//   "compilerOptions": {
+//      "baseUrl": ".",
+//     "paths": {
+//       "@/*": ["./*"]
+//     }
+//   }
+// }
+
+
+
+
 {
   "compilerOptions": {
+    "baseUrl": ".",      // ← এইটা অবশ্যই লাগবে
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"]     // ← alias definition
     }
   }
 }

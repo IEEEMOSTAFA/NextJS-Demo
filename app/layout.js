@@ -1,6 +1,6 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono,Inter } from "next/font/google";  //font optimization
 import "./globals.css";
-
+import Link from "next/link";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -18,11 +18,35 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="p-6">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* <nav>Home  | About  | Contact</nav> */}
+        <nav> 
+
+          <ul className="flex gap-3">
+            {/* <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/about/mission">Mission</a></li> */}
+
+            <li><Link href="/">Home</Link></li>
+            <li><Link  href="/about">About</Link></li>
+            <li><Link href="/about/mission">Mission</Link></li>
+            <li><Link href="/blog">Blogs</Link></li>
+            <li><Link href="/posts">Posts</Link></li>
+{/* about/mission used to enter nested operation */}
+
+
+
+          </ul>
+        </nav>
+        <hr></hr>
         {children}
+         <hr></hr>
+        <footer> This is footer part
+          
+        </footer>
       </body>
     </html>
   );
